@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Execude PHP
+      command: php -v
+      register: php_output
+
+    - name: Assert PHP is installed
+      assert:
+        that:
+          - php_output | length > 0
+          - php_output.stdout_lines is search("7.4")

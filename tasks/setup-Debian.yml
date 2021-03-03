@@ -1,0 +1,21 @@
+---
+- name: Ensure required packages are installed
+  package:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items: "{{ required_packages }}"
+
+- name: Add custom repository key to apt
+  apt_key:
+    url: "{{ apt_repository_key }}"
+    state: present
+  when: ansible_distribution == 'Debian'
+
+- name: Add custom repository to apt
+  apt_repository:
+    repo: "{{ apt_repository }}"
+    state: present
+    filename: php
+    update_cache: yes
+

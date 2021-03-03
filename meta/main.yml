@@ -1,0 +1,27 @@
+galaxy_info:
+  role_name: phpfpm
+  author: mkoprek
+  description: Role for install PHP / PHPFPM
+
+  license: MIT
+
+  min_ansible_version: 2.4
+
+  platforms:
+    - name: Debian
+      versions:
+        - buster
+        - stretch
+    - name: Ubuntu
+      versions:
+        - bionic
+        - xenial
+
+  galaxy_tags:
+    - php
+    - php-cli
+    - fpm
+    - network
+    - system
+
+dependencies: [ ]
