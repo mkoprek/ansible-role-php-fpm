@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/mkoprek/ansible-role-php-fpm.svg?token=EFsRLGikq6SHNjdgZ3ra&branch=main)](https://travis-ci.com/mkoprek/ansible-role-php-fpm)
+[![Build Status](https://travis-ci.com/mkoprek/ansible-role-php-fpm.svg?branch=main)](https://travis-ci.com/mkoprek/ansible-role-php-fpm)
 
 PHP-CLI / PHP-FPM Ansible Role
 =========
