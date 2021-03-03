@@ -1,0 +1,21 @@
+---
+- name: Include Debian variables
+  include_vars: Debian.yml
+  when: ansible_distribution == 'Debian'
+
+- name: Include Ubuntu variables
+  include_vars: Ubuntu.yml
+  when: ansible_distribution == 'Ubuntu'
+
+- include_tasks: setup-Ubuntu.yml
+  when:
+    - ansible_os_family == 'Ubuntu'
+
+- include_tasks: setup-Debian.yml
+  when:
+    - ansible_os_family == 'Debian'
+
+- name: Install PHP-CLI
+  package:
+    name: "php{{ php_version }}-cli"
+    state: present
